@@ -9,9 +9,10 @@ In this game, you click on the dice you want to keep. They will be moved down an
 ## Tech Being Used
 * HTML/CSS - Canvas to hold the game
 * JavaScript
+* DOM
 
 ## WireFrame
-
+[Wireframe](.Users/Kylie/Downloads/Yahtzee_Wireframe.drawio.png)
 
 ## MVP Checklist
 * Dice rolls 1-6
