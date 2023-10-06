@@ -16,7 +16,7 @@ In this game, you click on the dice you want to keep. They will be moved down an
 
 ## MVP Checklist
 * Dice rolls 1-6
-* Dice can be locked
+* Dice can be rerolled
 * Roll 3 times per turn
 * 13 turns
 * How to score points can be picks
