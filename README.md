@@ -12,7 +12,7 @@ In this game, you click on the dice you want to keep. They will be moved down an
 * DOM
 
 ## WireFrame
-[Wireframe](https://drive.google.com/file/d/1D-O3XOBcUrjFhuD_h_dTmjJaSOk-pLNH/view?usp=drive_link)
+![Yahtzee_Wireframe drawio](https://github.com/kfacison/yahtzee_project1/assets/90002078/262515c2-5756-4265-85da-ab046b980606)
 
 ## MVP Checklist
 * Dice rolls 1-6
