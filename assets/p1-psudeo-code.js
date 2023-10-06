@@ -1,10 +1,10 @@
 //Psudeo code
 
-//make dice class 
-// variable - dice value
+// Make dice class 
+//variable - dice value
 //function  - roll(rolls 1-6)
 
-// make 6 dice with dice class
+// Make 6 dice with dice class
 //set to const
 
 // Dice can be rerolled
@@ -18,15 +18,35 @@
 //iterrate 13 times
 
 // How to score points can be picked
-// After rolling, possiable ways to score (text and button) become bold
-// Player clicks button for how to score points
-//poits logged and way to score is removed
+//After rolling, possiable ways to score (text and button) become bold
+//Player clicks button for how to score points
+//points logged and way to score is removed
 
-//repeated tasks
+// Repeated tasks
+//read through scoreCard
 //check if dice value can score
-//change score display
+//change possiable score display
 //remove way to score
 
+//make socreCard object, if value is empty score possiable
 
 // Points are totaled
-// Score is displayed
+//Score is displayed
+
+/*
+init() - clears score and everything
+turn(){
+rollAllDice() - rolls all the dice
+render() {
+    renderDice()
+    renderScoreCard()
+}- updates dice and score card
+reroll() x2{
+render()
+} - rerolls dice(max of 2x)
+
+} - in one turn(do 13x)
+
+showScore() - shows the score
+
+*/
