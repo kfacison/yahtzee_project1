@@ -5,7 +5,7 @@
 //function  - roll(rolls 1-6)
 
 // Make 6 dice with dice class
-//set to const
+//set to array
 
 // Dice can be rerolled
 //reroll button, reroll coresponding dice
@@ -36,17 +36,17 @@
 /*
 init() - clears score and everything
 turn(){
-rollAllDice() - rolls all the dice
-render() {
-    renderDice()
-    renderScoreCard()
-}- updates dice and score card
-reroll() x2{
-render()
-} - rerolls dice(max of 2x)
+    rollAllDice() - rolls all the dice (itterratr through dice array)
+    render() {
+        renderDice() - itterratr through dice array
+        renderScoreCard()
+    }- updates dice and score card
+    reroll(diceToReroll) x2{
+        render()
+    } - reroll selected dice(max of 2x)(itterratr through dice array)
 
-} - in one turn(do 13x)
+} - all in one turn(do 13x)
 
-showScore() - shows the score
+showScore() - shows the final score
 
 */
