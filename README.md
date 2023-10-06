@@ -17,12 +17,20 @@ In this game, you click on the dice you want to keep. They will be moved down an
 ## MVP Checklist
 * Dice rolls 1-6
 * Dice can be locked
-* How to score roll can be picks
-* Winner is displayed
-* Each turn switched
+* Roll 3 times per turn
+* 13 turns
+* How to score points can be picks
+  * After rolling possible points scored become bold
+  * Button becomes visible
+  * Player clicks button for how to score points
+* Points are totaled
+* Score is displayed
 
 ## Stretch Goals
 * Arrow points at active player
+* Dice go into cup animation/transition
+* 2 players one pc possibility
+* Bouns way to score points
 
 ## Maybe Roadblocks
 * Feature creep
