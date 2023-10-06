@@ -1,4 +1,4 @@
-# yahtzee_project1
+# Yahtzee - Project 1
 The objective of the game is to score points by rolling five dice to make certain combinations.
 
 ## About the Game
@@ -12,7 +12,7 @@ In this game, you click on the dice you want to keep. They will be moved down an
 * DOM
 
 ## WireFrame
-![Yahtzee_Wireframe drawio](https://github.com/kfacison/yahtzee_project1/assets/90002078/262515c2-5756-4265-85da-ab046b980606)
+![Yahtzee_Wireframe_1player drawio](https://github.com/kfacison/yahtzee_project1/assets/90002078/de65f123-5033-45a4-a7a4-fcd0bfd9829b)
 
 ## MVP Checklist
 * Dice rolls 1-6
