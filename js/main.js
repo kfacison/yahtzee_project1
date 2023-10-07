@@ -31,4 +31,41 @@ function rollAllDice(){
 function reroll(...diceToReroll){
     diceToReroll.forEach(diceIdx => {cupOfDice[diceIdx].roll();});
 }
-console.log(cupOfDice);
+
+//clears score and everything
+function init(){
+    rollAllDice();
+    render();
+}
+
+//updates dice and score card
+function render(){
+    renderDice()
+    renderScoreCard()
+}
+
+//itterratr through dice array update based on dice.value
+function renderDice(){
+
+}
+
+//update scorecard
+function renderScoreCard(){
+
+}
+
+//shows the final score
+function showScore(){
+
+}
+
+function turn(){
+    let turnCounter =0;
+    while(turnCounter<13){
+        rollAllDice();
+        render();
+        //if there is no score change then reroll (max of 2 rerolls)
+        turnCounter++;
+    }
+    showScore();
+}

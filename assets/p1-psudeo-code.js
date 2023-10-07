@@ -1,6 +1,6 @@
 //Psudeo code
 
-// Make dice class 
+// Make dice class ✔
 //variable - dice value
 //function  - roll(rolls 1-6)
 
@@ -36,12 +36,14 @@
 /*
 init() - clears score and everything
 turn(){
-    rollAllDice() - rolls all the dice (itterratr through dice array)
+    rollAllDice() ✔ - rolls all the dice (itterratr through dice array)
+
     render() {
         renderDice() - itterratr through dice array
         renderScoreCard()
     }- updates dice and score card
-    reroll(diceToReroll) x2{
+
+    reroll(diceToReroll) ✔ x2{
         render()
     } - reroll selected dice(max of 2x)(itterratr through dice array)
 
@@ -50,3 +52,7 @@ turn(){
 showScore() - shows the final score
 
 */
+
+
+//might be better to have rollAllDice() and reroll() renderDice() in the function
+//(after main code is done exucuting)
