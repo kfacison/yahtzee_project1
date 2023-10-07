@@ -31,3 +31,7 @@ text-align: center;
 #diceMat{
     text-align: center;
 }
+
+#scoreCard > .picked{
+    color: rebeccapurple
+}
