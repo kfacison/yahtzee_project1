@@ -87,10 +87,9 @@ function diceHasNum(desiredNum){
     }
 }
 function diceSum(){
-    let tempScore =0;
+    let tempScore = 0;
     for(let i=0;i<5;i++){
-        //console.log(`value of d`)
-            tempScore + cupOfDice[i].value;
+            tempScore += cupOfDice[i].value;
     }
     let possibleScore = document.querySelector(`label[for="chance"] span`);
     if(possibleScore.className === "picked"){
