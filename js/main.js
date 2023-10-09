@@ -62,6 +62,9 @@ function renderScoreCard(){
     }
     //checks for posibale score of chance
     diceSum();
+    //checks for possiable score of 3 and 4 of a kind
+    diceSameValue(3);
+    diceSameValue(4);
 }
 
 //shows the final score
@@ -92,6 +95,49 @@ function diceSum(){
             tempScore += cupOfDice[i].value;
     }
     let possibleScore = document.querySelector(`label[for="chance"] span`);
+    if(possibleScore.className === "picked"){
+        return;
+    }
+    else{
+        possibleScore.innerText = tempScore;
+        possibleScore.setAttribute("class","p");
+    }
+}
+
+function maxAppers(givenMaxCounter){
+    let maxValue = 0;
+    for(let i=1;i<7;i++){
+        let maxCounter;
+        if(givenMaxCounter === undefined){
+        maxCounter =0;
+        }
+        else{
+            maxCounter = givenMaxCounter
+        }
+        let tempCounter;
+        for(let j=0;j<5;j++){
+            if(cupOfDice[j].value===i){
+                tempCounter++;
+            }
+        }
+        if(tempCounter>maxCounter){
+            maxCounter = tempCounter;
+            maxValue = i;
+        }
+    }
+    return maxValue;
+}
+
+function diceSameValue(numberOfDice, desiredNum){
+    let diceCounter =0;
+    let tempScore = 0;
+    for(let i=0;i<5;i++){
+        if(cupOfDice[i].value === desiredNum){
+            diceCounter++
+            tempScore += desiredNum;
+        }
+    }
+    let possibleScore = document.querySelector(`label[for="${desiredNum}OfAKind"] span`);
     if(possibleScore.className === "picked"){
         return;
     }

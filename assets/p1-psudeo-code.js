@@ -56,3 +56,19 @@ showScore() - shows the final score
 
 //might be better to have rollAllDice() and reroll() renderDice() in the function
 //(after main code is done exucuting)
+
+//3 of a kind steps
+/*
+look through array for max number of dupicates
+if number of duplicates is 3 then the sum is the possiable score
+
+
+
+
+
+
+
+
+
+
+*/
