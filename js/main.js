@@ -56,9 +56,12 @@ function renderDice(){
 
 //update scorecard
 function renderScoreCard(){
+    //check for posiable scores of 1s-6s
     for(let i=1;i<7;i++){
         diceHasNum(i);
     }
+    //checks for posibale score of chance
+    diceSum();
 }
 
 //shows the final score
@@ -77,6 +80,21 @@ function diceHasNum(desiredNum){
     if(tempScore===0){
         possibleScore.innerText = 0;
         possibleScore.removeAttribute("class");
+    }
+    else{
+        possibleScore.innerText = tempScore;
+        possibleScore.setAttribute("class","p");
+    }
+}
+function diceSum(){
+    let tempScore =0;
+    for(let i=0;i<5;i++){
+        //console.log(`value of d`)
+            tempScore + cupOfDice[i].value;
+    }
+    let possibleScore = document.querySelector(`label[for="chance"] span`);
+    if(possibleScore.className === "picked"){
+        return;
     }
     else{
         possibleScore.innerText = tempScore;
