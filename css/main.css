@@ -32,10 +32,10 @@ text-align: center;
     text-align: center;
 }
 
-#scoreCard > .picked{
-    color: rebeccapurple;
+.p{
+    color: red;
 }
 
-#scoreCard > .picked{
-    color: darkgrey;
+.picked{
+    color: blue;
 }

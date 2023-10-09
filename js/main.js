@@ -56,12 +56,38 @@ function renderDice(){
 
 //update scorecard
 function renderScoreCard(){
-
+    for(let i=1;i<7;i++){
+        diceHasNum(i);
+    }
 }
 
 //shows the final score
 function showScore(){
+}
 
+function diceHasNum(desiredNum){
+    let tempScore =0;
+    for(let i=0;i<5;i++){
+        if(cupOfDice[i].value === desiredNum){
+            tempScore += desiredNum;
+        }
+    }
+    let possibleScore = document.querySelector(`label[for="${desiredNum}s"] span`);
+    if(possibleScore.className === "picked"){return;}
+    if(tempScore===0){
+        possibleScore.innerText = 0;
+        possibleScore.removeAttribute("class");
+    }
+    else{
+        possibleScore.innerText = tempScore;
+        possibleScore.setAttribute("class","p");
+    }
+}
+
+function test(){
+    rollAllDice();
+    renderDice();
+    renderScoreCard();
 }
 
 function turn(){
