@@ -33,5 +33,9 @@ text-align: center;
 }
 
 #scoreCard > .picked{
-    color: rebeccapurple
+    color: rebeccapurple;
+}
+
+#scoreCard > .picked{
+    color: darkgrey;
 }

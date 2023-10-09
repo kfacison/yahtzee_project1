@@ -46,6 +46,11 @@ function render(){
 
 //itterratr through dice array update based on dice.value
 function renderDice(){
+    for(let i=1;i<6;i++){
+        let tempDice;
+        tempDice = document.querySelector(("span.value"+i));
+        tempDice.innerText = cupOfDice[i-1].value;
+    }
 
 }
 
