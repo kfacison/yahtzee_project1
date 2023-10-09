@@ -62,8 +62,10 @@ function renderScoreCard(){
     }
     //checks for posibale score of chance
     diceSum();
-    //checks for possiable score of 3 of a kind
-    maxAppers(3);
+    //checks for possiable score of 3/4/5 of a kind
+    threeSame();
+    fourSame();
+    yahtzeeSame();
 }
 
 //shows the final score
@@ -113,30 +115,56 @@ function maxAppers(givenMaxCounter=0){
                 tempCounter++;
             }
         }
-        console.log(`counted ${i} a total of ${tempCounter} times`);
-        if(tempCounter===maxCounter){
-            maxValue = i;
+        //console.log(`counted ${i} a total of ${tempCounter} times`);
+        if(tempCounter>=maxCounter){
+            return true;
         }
     }
-    console.log(`the value that appers ${givenMaxCounter} time  is ${maxValue}`);
-    return maxValue;
+    //console.log(`the value that appers ${givenMaxCounter} time  is ${maxValue}`);
+    //return maxValue;
+    return false;
 }
 
-function diceSameValue(numberOfDice, desiredNum){
-    let diceCounter =0;
-    let tempScore = 0;
-    for(let i=0;i<5;i++){
-        if(cupOfDice[i].value === desiredNum){
-            diceCounter++
-            tempScore += desiredNum;
-        }
-    }
-    let possibleScore = document.querySelector(`label[for="${desiredNum}OfAKind"] span`);
+function threeSame(){
+    
+    let possibleScore = document.querySelector(`label[for="3OfAKind"] span`);
     if(possibleScore.className === "picked"){
         return;
     }
-    else{
+    else if(maxAppers(3)){
+        let tempScore = 0;
+        for(let i=0;i<5;i++){
+                tempScore += cupOfDice[i].value;
+        }
         possibleScore.innerText = tempScore;
+        possibleScore.setAttribute("class","p");
+    }
+}
+
+function fourSame(){
+    
+    let possibleScore = document.querySelector(`label[for="4OfAKind"] span`);
+    if(possibleScore.className === "picked"){
+        return;
+    }
+    else if(maxAppers(4)){
+        let tempScore = 0;
+        for(let i=0;i<5;i++){
+                tempScore += cupOfDice[i].value;
+        }
+        possibleScore.innerText = tempScore;
+        possibleScore.setAttribute("class","p");
+    }
+}
+
+function yahtzeeSame(){
+    
+    let possibleScore = document.querySelector(`label[for="YAHTZEE"] span`);
+    if(possibleScore.className === "picked"){
+        return;
+    }
+    else if(maxAppers(5)){
+        possibleScore.innerText = 60;
         possibleScore.setAttribute("class","p");
     }
 }
@@ -145,7 +173,7 @@ function test(){
     dice1.value=3;
     dice2.value=1;
     dice3.value=3;
-    dice4.value=2;
+    dice4.value=3;
     dice5.value=3;
     renderDice();
     renderScoreCard();
