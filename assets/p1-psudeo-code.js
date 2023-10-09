@@ -63,12 +63,14 @@ look through array for max number of dupicates
 if number of duplicates is 3 then the sum is the possiable score
 
 
+*/
 
 
-
-
-
-
+/*
+oject
 
 
 */
+
+//ugly code is ok
+//get mvp done first THEN make it pretty.

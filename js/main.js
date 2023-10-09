@@ -62,9 +62,8 @@ function renderScoreCard(){
     }
     //checks for posibale score of chance
     diceSum();
-    //checks for possiable score of 3 and 4 of a kind
-    diceSameValue(3);
-    diceSameValue(4);
+    //checks for possiable score of 3 of a kind
+    maxAppers(3);
 }
 
 //shows the final score
@@ -104,27 +103,22 @@ function diceSum(){
     }
 }
 
-function maxAppers(givenMaxCounter){
+function maxAppers(givenMaxCounter=0){
     let maxValue = 0;
     for(let i=1;i<7;i++){
-        let maxCounter;
-        if(givenMaxCounter === undefined){
-        maxCounter =0;
-        }
-        else{
-            maxCounter = givenMaxCounter
-        }
-        let tempCounter;
+        let maxCounter = givenMaxCounter;
+        let tempCounter = 0;
         for(let j=0;j<5;j++){
             if(cupOfDice[j].value===i){
                 tempCounter++;
             }
         }
-        if(tempCounter>maxCounter){
-            maxCounter = tempCounter;
+        console.log(`counted ${i} a total of ${tempCounter} times`);
+        if(tempCounter===maxCounter){
             maxValue = i;
         }
     }
+    console.log(`the value that appers ${givenMaxCounter} time  is ${maxValue}`);
     return maxValue;
 }
 
@@ -148,7 +142,11 @@ function diceSameValue(numberOfDice, desiredNum){
 }
 
 function test(){
-    rollAllDice();
+    dice1.value=3;
+    dice2.value=1;
+    dice3.value=3;
+    dice4.value=2;
+    dice5.value=3;
     renderDice();
     renderScoreCard();
 }
