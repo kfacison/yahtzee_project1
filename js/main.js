@@ -85,18 +85,17 @@ function renderScoreCard(){
     for(let i=1;i<7;i++){
         diceHasNum(i);
     }
-    //checks for posibale score of chance
-    chanceSum();
-    //checks for possiable score of 3/4/5 of a kind
+    //checks for possiable score of 3/4 of a kind
     threeSame();
     fourSame();
+    //checks for posibale score of full house
+    fullHouse();
+    //checks for posibale score of chance
+    chanceSum();
+    //checks for posibale score of yahtzee
     yahtzeeSame();
-
 }
 
-//shows the final score
-function showScore(){
-}
 
 function diceHasNum(desiredNum){
     let tempScore =0;
@@ -119,7 +118,7 @@ function diceHasNum(desiredNum){
 function chanceSum(){
     let tempScore = 0;
     for(let i=0;i<5;i++){
-            tempScore += cupOfDice[i].value;
+        tempScore += cupOfDice[i].value;
     }
     let possibleScore = document.querySelector(`label[for="chance"] span`);
     if(possibleScore.className === "picked"){
@@ -149,34 +148,55 @@ function maxAppers(givenMaxCounter=0){
 }
 
 function threeSame(){
-    
     let possibleScore = document.querySelector(`label[for="3OfAKind"] span`);
     if(possibleScore.className === "picked"){
         return;
     }
-    else if(maxAppers(3)){
+    if(maxAppers(3)){
         let tempScore = 0;
         for(let i=0;i<5;i++){
-                tempScore += cupOfDice[i].value;
+            tempScore += cupOfDice[i].value;
         }
         possibleScore.innerText = tempScore;
         possibleScore.setAttribute("class","p");
+    }
+    else{
+        possibleScore.innerText = 0;
+        possibleScore.removeAttribute("class");
     }
 }
 
 function fourSame(){
-    
     let possibleScore = document.querySelector(`label[for="4OfAKind"] span`);
     if(possibleScore.className === "picked"){
         return;
     }
-    else if(maxAppers(4)){
+    if(maxAppers(4)){
         let tempScore = 0;
         for(let i=0;i<5;i++){
-                tempScore += cupOfDice[i].value;
+            tempScore += cupOfDice[i].value;
         }
         possibleScore.innerText = tempScore;
         possibleScore.setAttribute("class","p");
+    }
+    else{
+        possibleScore.innerText = 0;
+        possibleScore.removeAttribute("class");
+    }
+}
+
+function fullHouse(){
+    let possibleScore = document.querySelector(`label[for="fullHouse"] span`);
+    if(possibleScore.className === "picked"){
+        return;
+    }
+    if(maxAppers(2) && maxAppers(3)){
+        possibleScore.innerText = 25;
+        possibleScore.setAttribute("class","p");
+    }
+    else{
+        possibleScore.innerText = 0;
+        possibleScore.removeAttribute("class");
     }
 }
 
@@ -195,7 +215,11 @@ function yahtzeeSame(){
 function test(){
     rollAllDice();
     //renderDice();
-    renderScoreCard();
+    //renderScoreCard();
+}
+
+//shows the final score
+function showScore(){
 }
 
 function turn(){
