@@ -282,18 +282,6 @@ function yahtzeeSame(){
     }
 }
 
-function test(){
-    rollAllDice();
-    numOfTurns++;
-    while(numOfTurns<14){
-        turn();
-    }
-    //rollAllDice();
-    // renderDice();
-    // renderScoreCard();
-}
-
-
 //shows the final score
 function showScore(){
     const scoreSum = Object.values(scoreCard).reduce((a, b) => a + b, 0);
@@ -301,9 +289,27 @@ function showScore(){
 }
 
 function turn(){
+    console.log("In the turn fuction before the if statment")
     if(haslockedIn){
+        console.log("In the turn fuction after the if statment");
         rollAllDice();
         numOfTurns++;
         //if there is no score change then reroll (max of 2 rerolls)
-        }
+        console.log("turn is over")
+    }
+}
+
+function test(){
+    console.log("let the test begin");
+    rollAllDice();
+    console.log("dice have been rolled");
+    numOfTurns++;
+    console.log("numOfTurn is now 1");
+    while(numOfTurns<14){
+        console.log("in the while loop");
+        turn();
+    }
+    //rollAllDice();
+    // renderDice();
+    // renderScoreCard();
 }
