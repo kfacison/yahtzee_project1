@@ -81,3 +81,6 @@ set span to class of picked
 
 // found code on stack geeks for geeks and moded it for small and large stargight
 //link: https://www.geeksforgeeks.org/check-if-array-elements-are-consecutive/#
+
+//stectch goal 
+//if sorce of 0 is selcted add a warning message

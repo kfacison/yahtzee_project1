@@ -40,10 +40,12 @@ function rerollSelected(){
 function lockInScore(evt){
     evt.preventDefault();
     const isSelcted = document.querySelector("input[name=points]:checked");
+    //const isSelctedScore =document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
     if(!scoreCard[isSelcted.id]){
         scoreCard[isSelcted.id] = document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
         document.querySelector(`label[for="${isSelcted.id}"] span`).setAttribute("class", "picked");
         isSelcted.style.visibility = "hidden"
+        rollAllDice();
     }
 }
 
@@ -190,7 +192,7 @@ function fullHouse(){
 }
 
 function consecutiveNums(desiredConsecutiveNums){
-    let tempArrayOfDice = cupOfDice.sort((diceA,diceB)=>{
+    let tempArrayOfDice = cupOfDice.toSorted((diceA,diceB)=>{
         if(diceA.value < diceB.value){
             return -1
         }
@@ -277,26 +279,12 @@ function yahtzeeSame(){
 }
 
 function test(){
+    init();
     //rollAllDice();
-    dice1.value=6;
-    dice2.value=4;
-    dice3.value=1;
-    dice4.value=3;
-    dice5.value=2;
-    renderDice();
-    renderScoreCard();
+    // renderDice();
+    // renderScoreCard();
 }
 
-function test2(){
-    //rollAllDice();
-    dice1.value=5;
-    dice2.value=4;
-    dice3.value=1;
-    dice4.value=3;
-    dice5.value=2;
-    renderDice();
-    renderScoreCard();
-}
 
 //shows the final score
 function showScore(){
