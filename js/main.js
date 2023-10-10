@@ -16,7 +16,7 @@ const scoreCard = {}
 /*----- state variables -----*/
 let numOfRerolls = 0;
 let hasLockedIn = false;
-let numOfTurns = 0;
+let numOfTurns = 1;
 
 /*----- cached elements  -----*/
 const rerollButton = document.getElementById("rerollButton");
@@ -39,10 +39,10 @@ function rerollSelected(){
     }
     reroll(numsToReroll);
     numOfRerolls++;
-    const placerholer = document.querySelectorAll("#diceMat input");
+    const placerholer = document.querySelectorAll("input");
     for(let i=0;i<placerholer.length;i++){
         placerholer[i].checked =false;
-        console.log(placerholer[i].checked);
+        //console.log(placerholer[i].checked);
     }
 }
 
@@ -55,9 +55,12 @@ function lockInScore(evt){
         document.querySelector(`label[for="${isSelcted.id}"] span`).setAttribute("class", "picked");
         isSelcted.style.visibility = "hidden"
         hasLockedIn = true;
-        rollAllDice();
         numOfTurns++;
-        console.log("Turn: "+numOfTurns);
+        rollAllDice();
+        const placerholer = document.querySelectorAll("input");
+        for(let i=0;i<placerholer.length;i++){
+            placerholer[i].checked =false;
+        }
         showScore(numOfTurns);
     }
 
@@ -66,6 +69,7 @@ function lockInScore(evt){
 function rollAllDice(){
     cupOfDice.forEach(dice => {dice.roll()});
     render();
+    console.log("Turn: "+numOfTurns);
 }
 
 //pass index of cupOfDice to reroll
@@ -294,7 +298,7 @@ function yahtzeeSame(){
 
 //shows the final score
 function showScore(numOfTurns){
-    if(numOfTurns === 13){
+    if(numOfTurns === 14){
         const scoreSum = Object.values(scoreCard).reduce((a, b) => parseInt(a,10) + parseInt(b,10), 0);
         console.log(`The game is over and your score is ${scoreSum}`);
     }
@@ -331,3 +335,5 @@ function test(){
 function gamePlayTest(){
     rollAllDice();
 }
+
+gamePlayTest();
