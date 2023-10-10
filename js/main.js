@@ -15,7 +15,7 @@ const scoreCard = {}
 
 /*----- state variables -----*/
 let numOfRerolls = 0;
-let haslockedIn = false;
+let hasLockedIn = false;
 let numOfTurns = 0;
 
 /*----- cached elements  -----*/
@@ -39,6 +39,11 @@ function rerollSelected(){
     }
     reroll(numsToReroll);
     numOfRerolls++;
+    const placerholer = document.querySelectorAll("#diceMat input");
+    for(let i=0;i<placerholer.length;i++){
+        placerholer[i].checked =false;
+        console.log(placerholer[i].checked);
+    }
 }
 
 function lockInScore(evt){
@@ -49,8 +54,13 @@ function lockInScore(evt){
         scoreCard[isSelcted.id] = document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
         document.querySelector(`label[for="${isSelcted.id}"] span`).setAttribute("class", "picked");
         isSelcted.style.visibility = "hidden"
-        haslockedIn = true;
+        hasLockedIn = true;
+        rollAllDice();
+        numOfTurns++;
+        console.log("Turn: "+numOfTurns);
+        showScore(numOfTurns);
     }
+
 }
 
 function rollAllDice(){
@@ -283,17 +293,20 @@ function yahtzeeSame(){
 }
 
 //shows the final score
-function showScore(){
-    const scoreSum = Object.values(scoreCard).reduce((a, b) => a + b, 0);
-    console.log(`The game is over and your score is ${scoreSum}`);
+function showScore(numOfTurns){
+    if(numOfTurns === 13){
+        const scoreSum = Object.values(scoreCard).reduce((a, b) => parseInt(a,10) + parseInt(b,10), 0);
+        console.log(`The game is over and your score is ${scoreSum}`);
+    }
 }
 
 function turn(){
     console.log("In the turn fuction before the if statment")
-    if(haslockedIn){
+    console.log(`hasLockedIn is ${hasLockedIn}`);
+    if(hasLockedIn){
         console.log("In the turn fuction after the if statment");
         rollAllDice();
-        numOfTurns++;
+        // numOfTurns++;
         //if there is no score change then reroll (max of 2 rerolls)
         console.log("turn is over")
     }
@@ -308,8 +321,13 @@ function test(){
     while(numOfTurns<14){
         console.log("in the while loop");
         turn();
+        numOfTurns++;
     }
     //rollAllDice();
     // renderDice();
     // renderScoreCard();
+}
+
+function gamePlayTest(){
+    rollAllDice();
 }
