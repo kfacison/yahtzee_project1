@@ -74,3 +74,10 @@ oject
 
 //ugly code is ok
 //get mvp done first THEN make it pretty.
+
+
+
+//when roll button is clicked
+//coraponding selected boxes info is passed to functio reroll.
+
+//output selected boxes when roll is clicked

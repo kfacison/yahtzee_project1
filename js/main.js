@@ -16,26 +16,49 @@ const cupOfDice =[dice1,dice2,dice3,dice4,dice5];
 
 
 /*----- cached elements  -----*/
-
+const rerollButton = document.getElementById("rerollButton");
+const lockInButton = document.getElementById("lockIn");
 
 /*----- event listeners -----*/
-
+rerollButton.addEventListener("click", testOutput);
+//lockInButton.addEventListener("click",testOutput2);
 
 /*----- functions -----*/
 
+function testOutput(){
+    let numsToReroll = [];
+    for(let i =1;i<6;i++){
+        const isCheckboxes = document.getElementById(`diceReroll${i}`).checked;
+        if(isCheckboxes){
+            console.log(`box ${i} is selected`)
+            numsToReroll.push(i);
+        }
+    }
+    console.log(numsToReroll);
+    reroll(numsToReroll);
+}
+
+function testOutput2(evt){
+    evt.preventDefault();
+    const isSelcted = document.getElementById("scoreCard").value;
+    console.log(isSelcted);
+}
+
 function rollAllDice(){
     cupOfDice.forEach(dice => {dice.roll()});
+    render();
 }
 
 //pass index of cupOfDice to reroll
-function reroll(...diceToReroll){
-    diceToReroll.forEach(diceIdx => {cupOfDice[diceIdx].roll();});
+function reroll(diceToReroll){
+    console.log(diceToReroll);
+    diceToReroll.forEach(diceIdx => {cupOfDice[diceIdx-1].roll()});
+    render();
 }
 
 //clears score and everything
 function init(){
     rollAllDice();
-    render();
 }
 
 //updates dice and score card
@@ -61,11 +84,16 @@ function renderScoreCard(){
         diceHasNum(i);
     }
     //checks for posibale score of chance
-    diceSum();
+    chanceSum();
     //checks for possiable score of 3/4/5 of a kind
     threeSame();
     fourSame();
     yahtzeeSame();
+
+}
+
+function lockInScore(){
+
 }
 
 //shows the final score
@@ -90,7 +118,7 @@ function diceHasNum(desiredNum){
         possibleScore.setAttribute("class","p");
     }
 }
-function diceSum(){
+function chanceSum(){
     let tempScore = 0;
     for(let i=0;i<5;i++){
             tempScore += cupOfDice[i].value;
@@ -115,13 +143,10 @@ function maxAppers(givenMaxCounter=0){
                 tempCounter++;
             }
         }
-        //console.log(`counted ${i} a total of ${tempCounter} times`);
         if(tempCounter>=maxCounter){
             return true;
         }
     }
-    //console.log(`the value that appers ${givenMaxCounter} time  is ${maxValue}`);
-    //return maxValue;
     return false;
 }
 
@@ -170,12 +195,8 @@ function yahtzeeSame(){
 }
 
 function test(){
-    dice1.value=3;
-    dice2.value=1;
-    dice3.value=3;
-    dice4.value=3;
-    dice5.value=3;
-    renderDice();
+    rollAllDice();
+    //renderDice();
     renderScoreCard();
 }
 
