@@ -14,7 +14,9 @@ const scoreCard = {}
 
 
 /*----- state variables -----*/
-
+let numOfRerolls = 0;
+let haslockedIn = false;
+let numOfTurns = 0;
 
 /*----- cached elements  -----*/
 const rerollButton = document.getElementById("rerollButton");
@@ -27,6 +29,7 @@ lockInButton.addEventListener("click",lockInScore);
 /*----- functions -----*/
 
 function rerollSelected(){
+    if(numOfRerolls===2){return;}
     let numsToReroll = [];
     for(let i =1;i<6;i++){
         const isCheckboxes = document.getElementById(`diceReroll${i}`).checked;
@@ -35,6 +38,7 @@ function rerollSelected(){
         }
     }
     reroll(numsToReroll);
+    numOfRerolls++;
 }
 
 function lockInScore(evt){
@@ -45,7 +49,7 @@ function lockInScore(evt){
         scoreCard[isSelcted.id] = document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
         document.querySelector(`label[for="${isSelcted.id}"] span`).setAttribute("class", "picked");
         isSelcted.style.visibility = "hidden"
-        rollAllDice();
+        haslockedIn = true;
     }
 }
 
@@ -279,7 +283,11 @@ function yahtzeeSame(){
 }
 
 function test(){
-    init();
+    rollAllDice();
+    numOfTurns++;
+    while(numOfTurns<14){
+        turn();
+    }
     //rollAllDice();
     // renderDice();
     // renderScoreCard();
@@ -288,15 +296,14 @@ function test(){
 
 //shows the final score
 function showScore(){
+    const scoreSum = Object.values(scoreCard).reduce((a, b) => a + b, 0);
+    console.log(`The game is over and your score is ${scoreSum}`);
 }
 
 function turn(){
-    let turnCounter =0;
-    while(turnCounter<13){
+    if(haslockedIn){
         rollAllDice();
-        render();
+        numOfTurns++;
         //if there is no score change then reroll (max of 2 rerolls)
-        turnCounter++;
-    }
-    showScore();
+        }
 }

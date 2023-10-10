@@ -84,3 +84,7 @@ set span to class of picked
 
 //stectch goal 
 //if sorce of 0 is selcted add a warning message
+
+
+//code for sum of oject values from stack overflow
+//link: https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascript-object#:~:text=It%20can%20be%20as%20simple,%3E%20a%20%2B%20b%2C%200)%3B
