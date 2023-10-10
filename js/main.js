@@ -9,6 +9,7 @@ const dice3 = new Dice;
 const dice4 = new Dice;
 const dice5 = new Dice;
 const cupOfDice =[dice1,dice2,dice3,dice4,dice5];
+const scoreCard = {}
 
 
 
@@ -20,28 +21,30 @@ const rerollButton = document.getElementById("rerollButton");
 const lockInButton = document.getElementById("lockIn");
 
 /*----- event listeners -----*/
-rerollButton.addEventListener("click", testOutput);
-//lockInButton.addEventListener("click",testOutput2);
+rerollButton.addEventListener("click", rerollSelected);
+lockInButton.addEventListener("click",lockInScore);
 
 /*----- functions -----*/
 
-function testOutput(){
+function rerollSelected(){
     let numsToReroll = [];
     for(let i =1;i<6;i++){
         const isCheckboxes = document.getElementById(`diceReroll${i}`).checked;
         if(isCheckboxes){
-            console.log(`box ${i} is selected`)
             numsToReroll.push(i);
         }
     }
-    console.log(numsToReroll);
     reroll(numsToReroll);
 }
 
-function testOutput2(evt){
+function lockInScore(evt){
     evt.preventDefault();
-    const isSelcted = document.getElementById("scoreCard").value;
-    console.log(isSelcted);
+    const isSelcted = document.querySelector("input[name=points]:checked");
+    if(!scoreCard[isSelcted.id]){
+        scoreCard[isSelcted.id] = document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
+        document.querySelector(`label[for="${isSelcted.id}"] span`).setAttribute("class", "picked");
+        isSelcted.style.visibility = "hidden"
+    }
 }
 
 function rollAllDice(){
@@ -51,7 +54,6 @@ function rollAllDice(){
 
 //pass index of cupOfDice to reroll
 function reroll(diceToReroll){
-    console.log(diceToReroll);
     diceToReroll.forEach(diceIdx => {cupOfDice[diceIdx-1].roll()});
     render();
 }
@@ -89,10 +91,6 @@ function renderScoreCard(){
     threeSame();
     fourSame();
     yahtzeeSame();
-
-}
-
-function lockInScore(){
 
 }
 
