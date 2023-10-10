@@ -50,34 +50,34 @@ turn(){
 } - all in one turn(do 13x)
 
 showScore() - shows the final score
-
 */
-
 
 //might be better to have rollAllDice() and reroll() renderDice() in the function
 //(after main code is done exucuting)
 
 //3 of a kind steps
+
 /*
 look through array for max number of dupicates
 if number of duplicates is 3 then the sum is the possiable score
-
-
 */
 
 
 /*
-oject
-
-
+score card onject
+key = way to score id (5s or 4OfAKind)
+value = score
+if key is not in object add to it
+set span to class of picked
 */
 
 //ugly code is ok
 //get mvp done first THEN make it pretty.
 
 
-
 //when roll button is clicked
 //coraponding selected boxes info is passed to functio reroll.
-
 //output selected boxes when roll is clicked
+
+// found code on stack geeks for geeks and moded it for small and large stargight
+//link: https://www.geeksforgeeks.org/check-if-array-elements-are-consecutive/#
