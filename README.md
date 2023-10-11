@@ -6,7 +6,7 @@ In each turn, a player may throw the dice up to three times. A player doesn't ha
 
 In this game, you click on the dice you want to keep. They will be moved down and will not be thrown the next time you press the 'Roll Dice' button. If you decide after the second throw in a turn that you don't want to keep the same dice before the third throw then you can click them again and they will move back to the table and be thrown in the third throw.
 
-[Play Game here](https://kfacison.github.io/yahtzee_project1/)
+Play Game -> [here](https://kfacison.github.io/yahtzee_project1/)
 
 ## Tech Being Used
 * HTML/CSS - Canvas to hold the game
