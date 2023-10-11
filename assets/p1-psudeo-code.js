@@ -55,16 +55,23 @@ showScore() - shows the final score
 //might be better to have rollAllDice() and reroll() renderDice() in the function
 //(after main code is done exucuting)
 
-//3 of a kind steps
-
 /*
+3 of a kind steps
+
 look through array for max number of dupicates
 if number of duplicates is 3 then the sum is the possiable score
 */
 
+//full house steps
+/*
+make temp array of values
+remove duplicates
+if lenght if array is 2 then return ture
+else return false
+*/
 
 /*
-score card onject
+score card object
 key = way to score id (5s or 4OfAKind)
 value = score
 if key is not in object add to it
@@ -91,5 +98,4 @@ set span to class of picked
 
 //lock for all inputs
 //set checked to false
-//
 

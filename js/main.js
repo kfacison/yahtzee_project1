@@ -195,12 +195,36 @@ function fourSame(){
     }
 }
 
+function countDuplicates(){
+    let tempArray =[];
+    for(let i =0;i<cupOfDice.length;i++){
+        tempArray.push(cupOfDice[i].value);
+    }
+    let noDupArrays = tempArray.reduce((newObj,diceVal) =>{
+        if(!newObj[diceVal]){
+            newObj[diceVal] = 1;
+        }
+        else{
+            newObj[diceVal] += 1;
+        }
+        return newObj;
+    },{});
+    let finalTemp = Object.values(noDupArrays);
+    finalTemp.sort();
+    if(finalTemp[0]===2 && finalTemp[1]===3){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 function fullHouse(){
     let possibleScore = document.querySelector(`label[for="fullHouse"] span`);
     if(possibleScore.className === "picked"){
         return;
     }
-    if(maxAppers(2) && maxAppers(3)){
+    if(countDuplicates()){
         possibleScore.innerText = 25;
         possibleScore.setAttribute("class","p");
     }
