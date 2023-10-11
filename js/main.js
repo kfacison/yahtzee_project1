@@ -56,12 +56,13 @@ function lockInScore(evt){
         isSelcted.style.visibility = "hidden"
         hasLockedIn = true;
         numOfTurns++;
+        numOfRerolls =0;
         rollAllDice();
         const placerholer = document.querySelectorAll("input");
         for(let i=0;i<placerholer.length;i++){
             placerholer[i].checked =false;
         }
-        showScore(numOfTurns);
+        //showScore(numOfTurns);
     }
 
 }
@@ -69,7 +70,7 @@ function lockInScore(evt){
 function rollAllDice(){
     cupOfDice.forEach(dice => {dice.roll()});
     render();
-    console.log("Turn: "+numOfTurns);
+    //console.log(`Turn: ${numOfTurns}`);
 }
 
 //pass index of cupOfDice to reroll
@@ -87,6 +88,7 @@ function init(){
 function render(){
     renderDice()
     renderScoreCard()
+    renderScore();
 }
 
 //itterratr through dice array update based on dice.value
@@ -296,11 +298,26 @@ function yahtzeeSame(){
     }
 }
 
+function renderScore(){
+    const scoreSum = Object.values(scoreCard).reduce((a, b) => parseInt(a,10) + parseInt(b,10), 0);
+    const scoreOutput = document.getElementById("score")
+    const turnOutput = document.getElementById("turn")
+    scoreOutput.innerText = `Score: ${scoreSum}`
+    if(numOfTurns===14){
+        turnOutput.innerText = `GAME OVER`
+        scoreOutput.style.color = "blue";
+    }
+    else{
+        turnOutput.innerText = `Turn ${numOfTurns}`
+    }
+    //console.log(scoreOutput);
+}
+
 //shows the final score
 function showScore(numOfTurns){
     if(numOfTurns === 14){
         const scoreSum = Object.values(scoreCard).reduce((a, b) => parseInt(a,10) + parseInt(b,10), 0);
-        console.log(`The game is over and your score is ${scoreSum}`);
+        return scoreSum;
     }
 }
 
