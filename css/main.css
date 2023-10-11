@@ -85,9 +85,7 @@ text-align: center;
     border: 5px solid #003100;
     border-radius: 20px;
 }
-#diceMat > div{
-    
-}
+
 #diceMat >div>p{
     margin: 0;
     border: 2px solid black;
@@ -116,14 +114,25 @@ text-align: center;
 }
 
 #scoreCard{
+    display: inline-flex;
+    flex-direction: column;
     background-color: #74B2DF;
-    /* display: ; */
+    border-radius: 20px;
+    border: 5px solid #567B97;
+    min-width: 170px;
+    place-self: center;
 }
 #scoreCard>h3{
     text-align: center;
 }
-#scoreCard>input,label{
-    
+#scoreCard>button{
+    margin: 10px 0;
+    max-width: 100px;
+    align-self: center;
+    border-radius: 20px;
+    background-color: #D0F5FF;
+    border:2px solid #0066D3;
+    /* need clicked color change */
 }
 
 .p{
