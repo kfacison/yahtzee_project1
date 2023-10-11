@@ -9,14 +9,12 @@ const dice3 = new Dice;
 const dice4 = new Dice;
 const dice5 = new Dice;
 const cupOfDice =[dice1,dice2,dice3,dice4,dice5];
-const scoreCard = {}
-
-
 
 /*----- state variables -----*/
-let numOfRerolls = 0;
+let numOfRerolls = 2;
 let hasLockedIn = false;
 let numOfTurns = 1;
+let scoreCard = {};
 
 /*----- cached elements  -----*/
 const rerollButton = document.getElementById("rerollButton");
@@ -27,9 +25,8 @@ rerollButton.addEventListener("click", rerollSelected);
 lockInButton.addEventListener("click",lockInScore);
 
 /*----- functions -----*/
-
 function rerollSelected(){
-    if(numOfRerolls===2){return;}
+    if(numOfRerolls===0){return;}
     let numsToReroll = [];
     for(let i =1;i<6;i++){
         const isCheckboxes = document.getElementById(`diceReroll${i}`).checked;
@@ -38,12 +35,12 @@ function rerollSelected(){
         }
     }
     reroll(numsToReroll);
-    numOfRerolls++;
+    numOfRerolls--;
     const placerholer = document.querySelectorAll("input");
     for(let i=0;i<placerholer.length;i++){
         placerholer[i].checked =false;
-        //console.log(placerholer[i].checked);
     }
+    console.log(`You have ${numOfRerolls} rerolls left`);
 }
 
 function lockInScore(evt){
@@ -56,7 +53,7 @@ function lockInScore(evt){
         isSelcted.style.visibility = "hidden"
         hasLockedIn = true;
         numOfTurns++;
-        numOfRerolls =0;
+        numOfRerolls =2;
         rollAllDice();
         const placerholer = document.querySelectorAll("input");
         for(let i=0;i<placerholer.length;i++){
@@ -70,7 +67,6 @@ function lockInScore(evt){
 function rollAllDice(){
     cupOfDice.forEach(dice => {dice.roll()});
     render();
-    //console.log(`Turn: ${numOfTurns}`);
 }
 
 //pass index of cupOfDice to reroll
@@ -81,7 +77,10 @@ function reroll(diceToReroll){
 
 //clears score and everything
 function init(){
-    rollAllDice();
+    numOfRerolls = 2;
+    hasLockedIn = false;
+    numOfTurns = 1;
+    scoreCard = {};
 }
 
 //updates dice and score card
@@ -223,7 +222,6 @@ function consecutiveNums(desiredConsecutiveNums){
             return 0;
         }
     });
-    //console.log(tempArrayOfDice);
 
     let counter =0;
     for(let i=1; i< tempArrayOfDice.length; i++){
@@ -305,12 +303,11 @@ function renderScore(){
     scoreOutput.innerText = `Score: ${scoreSum}`
     if(numOfTurns===14){
         turnOutput.innerText = `GAME OVER`
-        scoreOutput.style.color = "blue";
+        scoreOutput.style.color = "#0066D3";
     }
     else{
         turnOutput.innerText = `Turn ${numOfTurns}`
     }
-    //console.log(scoreOutput);
 }
 
 //shows the final score
@@ -321,32 +318,15 @@ function showScore(numOfTurns){
     }
 }
 
-function turn(){
-    console.log("In the turn fuction before the if statment")
-    console.log(`hasLockedIn is ${hasLockedIn}`);
-    if(hasLockedIn){
-        console.log("In the turn fuction after the if statment");
-        rollAllDice();
-        // numOfTurns++;
-        //if there is no score change then reroll (max of 2 rerolls)
-        console.log("turn is over")
-    }
-}
 
 function test(){
-    console.log("let the test begin");
-    rollAllDice();
-    console.log("dice have been rolled");
-    numOfTurns++;
-    console.log("numOfTurn is now 1");
-    while(numOfTurns<14){
-        console.log("in the while loop");
-        turn();
-        numOfTurns++;
-    }
-    //rollAllDice();
-    // renderDice();
-    // renderScoreCard();
+    init();
+    dice1.value = 4;
+    dice2.value = 3;
+    dice3.value = 1;
+    dice4.value = 3;
+    dice5.value = 3;
+    render();
 }
 
 function gamePlayTest(){

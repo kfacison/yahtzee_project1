@@ -23,6 +23,7 @@ body{
         "main main sidebar"
         "main main sidebar"
         "main main .";
+    
 } 
 
 #playerInfo{
@@ -84,6 +85,7 @@ text-align: center;
     background-color: darkgreen;
     border: 5px solid #003100;
     border-radius: 20px;
+    
 }
 
 #diceMat >div>p{
