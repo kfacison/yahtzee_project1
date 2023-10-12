@@ -84,7 +84,6 @@ text-align: center;
     background-color: darkgreen;
     border: 5px solid #003100;
     border-radius: 20px;
-    max-width: 500px;
 }
 
 #diceMat >div>p{
@@ -98,16 +97,44 @@ text-align: center;
     align-items: center;
 }
 
-#diceMat >span{
-    place-self: center;
-    max-height: 125px;
-    max-width: 400px;
-    min-width: 350px;
-    padding: 0 5px;
+#diceMat > span > div#rrDice1{
+    grid-area: rrDice1;
+}
+#diceMat > span > div#rrDice2{
+    grid-area: rrDice2;
+}
+#diceMat > span > div#rrDice3{
+    grid-area: rrDice3;
+}
+#diceMat > span > div#rrDice4{
+    grid-area: rrDice4;
+}
+#diceMat > span > div#rrDice5{
+    grid-area: rrDice5;
+}
+#diceMat> span>button{
+    grid-area: rerollB;
+    
+}
+#diceMat>span>h3{
+    grid-area: header;
+    margin: 5px 0;
 }
 
+#diceMat >span{
+    place-self: center;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    ". header header header ."
+    ". rrDice1 . rrDice2 ."
+    ". . rrDice3 . ."
+    ". rrDice4 . rrDice5 ."
+    ". rerollB rerollB rerollB .";
+    justify-items: center;
+}
 #diceMat >span >button{
-    margin: 10px 0;
     border-radius: 20px;
     background-color: #D0F5FF;
     border:2px solid #00585F;
