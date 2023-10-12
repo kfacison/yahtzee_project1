@@ -1,9 +1,9 @@
 # Yahtzee
 The objective of the game is to score points by rolling five dice to make certain combinations.
 
-In each turn, a player may throw the dice up to three times. A player doesn't have to roll all five dice on the second and third throw of a round, he may put as many dice as he wants to the side and only throw the ones that don't have the numbers he's trying to get. For example, a player throws and gets 1,3,3,4,6. He decides he wants to try for the large straight, 1,2,3,4,5. So, he puts 1,3,4 to the side and only throws 3 and 6 again, hoping to get 2 and 5.
+In each turn, a player may roll the dice up to three times. A player doesn't have to reroll all five dice on the second and third roll, they may pick as many dice as they want and reroll for the numbers they don't have and are trying to get. For example, a player throws and gets 1,3,3,4,6. They decide to try for the large straight, 1,2,3,4,5. So, they put 1,3,4 to the side and only reroll 3 and 6 again, hoping to get 2 and 5.
 
-In this game, you click on the dice you want to keep. They will be moved down and will not be thrown the next time you press the 'Roll Dice' button. If you decide after the second throw in a turn that you don't want to keep the same dice before the third throw then you can click them again and they will move back to the table and be thrown in the third throw.
+In this game, you click on the corresponding checkboxes for the dice you want to reroll and then press the "Reroll" button. You may also click the "Select All" button that will select all the checkboxes, the "Reroll" button still needs to be selected to reroll the dice. To mark your score you select the corresponding circle and press the "Lock in Points" button to update the scorecard.
 
 # GamePlay
 
@@ -15,7 +15,7 @@ In this game, you click on the dice you want to keep. They will be moved down an
 
 
 ## Tech Being Used
-* HTML/CSS - Canvas to hold the game
+* HTML/CSS
 * JavaScript
 * DOM
 
