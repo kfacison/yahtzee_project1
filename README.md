@@ -7,9 +7,12 @@ In this game, you click on the dice you want to keep. They will be moved down an
 
 # GamePlay
 
-![StartPage]
-![FullScoreCard]
-![GameOver]
+![StartPageScreenshot](https://github.com/kfacison/yahtzee_project1/assets/90002078/10b3b96d-1589-46ab-86fc-10fc337955e4)
+
+![FullScoreCardScreenshot](https://github.com/kfacison/yahtzee_project1/assets/90002078/f9dcd2d0-0e45-4b5c-838c-11d3a6640710)
+
+![GameOverScreenshot](https://github.com/kfacison/yahtzee_project1/assets/90002078/6fbb82a1-f47c-4143-b91e-3e1a9e96cb97)
+
 
 ## Tech Being Used
 * HTML/CSS - Canvas to hold the game
@@ -27,10 +30,10 @@ Play Game -> [here](https://kfacison.github.io/yahtzee_project1/)
 
 # Prep Materal
 
-## WireFrame
+### WireFrame
 ![Yahtzee_Wireframe_1player drawio](https://github.com/kfacison/yahtzee_project1/assets/90002078/23555d8b-d70d-497a-9330-7d7228ea81a0)
 
-## MVP Checklist
+### MVP Checklist
 * Dice rolls 1-6
 * Dice can be rerolled
 * ReRoll 2 times per turn
@@ -42,16 +45,16 @@ Play Game -> [here](https://kfacison.github.io/yahtzee_project1/)
 * Points are totaled
 * Score is displayed
 
-## Stretch Goals
+### Stretch Goals
 * 2 players option
 * Arrow points at active player
 * Dice go into cup animation/transition
 * Bouns way to score points
 
-## Maybe Roadblocks
+### Maybe Roadblocks
 * Feature creep
 
-## Sources
+# Sources
 Rules/Decription: 
   * https://en.wikipedia.org/wiki/Yahtzee
   * https://cardgames.io/yahtzee/
