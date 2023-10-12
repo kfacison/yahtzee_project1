@@ -350,10 +350,10 @@ function playAgin(){
     document.getElementById("playerInfo").removeAttribute("class");
     let tempSpans = document.querySelectorAll("#scoreCard span");
     tempSpans.forEach((noode)=>{noode.removeAttribute("class")});
-    let tempInputs = document.querySelectorAll("#scoreCard div inputs");
-    console.log(tempInputs);
+    let tempInputs = document.querySelectorAll("#scoreCard div input");
     tempInputs.forEach((noode)=>{noode.style.visibility = ""});
     init();
+    rollAllDice();
 }
 
 function test(){

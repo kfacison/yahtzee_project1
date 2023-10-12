@@ -7,7 +7,15 @@
 }
 #playerInfo>button{
     margin-bottom: 20px;
+    border-radius: 20px;
+    background-color: #D0F5FF;
+    border:2px solid #0066D3;
 }
+    #playerInfo>button:active{
+    background-color: #B3D4EC;
+    border:2px solid #0066D3;
+}
+
 #diceMat{
     grid-area: main;
 }
