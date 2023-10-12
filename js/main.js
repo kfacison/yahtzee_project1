@@ -38,6 +38,7 @@ function rerollSelected(){
             numsToReroll.push(i);
         }
     }
+    if(numsToReroll.length===0){return}
     reroll(numsToReroll);
     numOfRerolls--;
     renderReroll();
