@@ -123,9 +123,11 @@ text-align: center;
 #diceMat > span > div#rrDice5{
     grid-area: rrDice5;
 }
-#diceMat> span>button{
+#diceMat> span>button#selectAll{
+    grid-area: slecetAllB;
+}
+#diceMat> span>button#rerollButton{
     grid-area: rerollB;
-    
 }
 #diceMat>span>h3{
     grid-area: header;
@@ -142,7 +144,7 @@ text-align: center;
     ". rrDice1 . rrDice2 ."
     ". . rrDice3 . ."
     ". rrDice4 . rrDice5 ."
-    ". rerollB rerollB rerollB .";
+    ". slecetAllB . rerollB .";
     justify-items: center;
 }
 #diceMat >span >button{

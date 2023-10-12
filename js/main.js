@@ -19,12 +19,14 @@ let scoreCard = {};
 /*----- cached elements  -----*/
 const rerollButton = document.getElementById("rerollButton");
 const lockInButton = document.getElementById("lockIn");
-const replayButton =document.getElementById("replay")
+const replayButton =document.getElementById("replay");
+const selectAllButton = document.getElementById("selectAll");
 
 /*----- event listeners -----*/
 rerollButton.addEventListener("click", rerollSelected);
 lockInButton.addEventListener("click",lockInScore);
 replayButton.addEventListener("click", playAgin);
+selectAllButton.addEventListener("click",selectAll);
 
 /*----- functions -----*/
 function rerollSelected(){
@@ -38,6 +40,7 @@ function rerollSelected(){
     }
     reroll(numsToReroll);
     numOfRerolls--;
+    renderReroll();
     const placerholer = document.querySelectorAll("input");
     for(let i=0;i<placerholer.length;i++){
         placerholer[i].checked =false;
@@ -64,6 +67,13 @@ function lockInScore(evt){
 
 }
 
+function selectAll(){
+    const placerholer = document.querySelectorAll("input");
+        for(let i=0;i<placerholer.length;i++){
+            placerholer[i].checked =true;
+        }
+}
+
 function rollAllDice(){
     cupOfDice.forEach(dice => {dice.roll()});
     render();
@@ -82,6 +92,10 @@ function init(){
     numOfTurns = 1;
     scoreCard = {};
     replayButton.style.visibility = "hidden";
+    const placerholer = document.querySelectorAll("input");
+        for(let i=0;i<placerholer.length;i++){
+            placerholer[i].checked =false;
+        }
 }
 
 //updates dice and score card
@@ -89,6 +103,7 @@ function render(){
     renderDice()
     renderScoreCard()
     renderScore();
+    renderReroll();
 }
 
 //itterratr through dice array update based on dice.value
@@ -98,7 +113,12 @@ function renderDice(){
         tempDice = document.querySelector(("span.value"+i));
         tempDice.innerText = cupOfDice[i-1].value;
     }
+}
 
+//render nums of reroll
+function renderReroll(){
+    let rrIndicator = document.getElementById("rrNum");
+    rrIndicator.innerText= numOfRerolls;
 }
 
 //update scorecard
