@@ -25,15 +25,16 @@ Play Game -> [here](https://kfacison.github.io/yahtzee_project1/)
 # Stretch Goals
 
 ## Minor/Quality of game play improvements
-* Add button that checks all reroll boxes(player still needs to click reroll)
+* Add button that checks all reroll boxes(player still needs to click reroll) ✔
 * Replay Button ✔
-* Out of reroll indicator(show number of rerolls left)
+* Out of reroll indicator(show number of rerolls left) ✔
 ## Major/New Features
 * 2 players option
 * Arrow points at active player
 * Dice go into cup animation/transition
 * Bonus way to score points
 * Select layout colors
+* pop up Instuctions
 
 # Prep Materal
 
