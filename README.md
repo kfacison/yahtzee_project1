@@ -3,7 +3,7 @@ The objective of the game is to score points by rolling five dice to make certai
 
 In each turn, a player may roll the dice up to three times. A player doesn't have to reroll all five dice on the second and third roll, they may pick as many dice as they want and reroll for the numbers they don't have and are trying to get. For example, a player throws and gets 1,3,3,4,6. They decide to try for the large straight, 1,2,3,4,5. So, they put 1,3,4 to the side and only reroll 3 and 6 again, hoping to get 2 and 5.
 
-In this game, you click on the corresponding checkboxes for the dice you want to reroll and then press the "Reroll" button. You may also click the "Select All" button that will select all the checkboxes, the "Reroll" button still needs to be selected to reroll the dice. To mark your score select the corresponding circle and press the "Lock in Points" button to update the scorecard.
+In this game, you click on the corresponding checkboxes for the dice you want to reroll and then press the "Reroll" button. To mark your score select the corresponding circle and press the "Lock in Points" button to update the scorecard.
 
 # GamePlay
 
