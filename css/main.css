@@ -5,6 +5,9 @@
 #playerInfo{
     grid-area: header;
 }
+#playerInfo>button{
+    margin-bottom: 20px;
+}
 #diceMat{
     grid-area: main;
 }

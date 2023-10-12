@@ -19,10 +19,12 @@ let scoreCard = {};
 /*----- cached elements  -----*/
 const rerollButton = document.getElementById("rerollButton");
 const lockInButton = document.getElementById("lockIn");
+const replayButton =document.getElementById("replay")
 
 /*----- event listeners -----*/
 rerollButton.addEventListener("click", rerollSelected);
 lockInButton.addEventListener("click",lockInScore);
+replayButton.addEventListener("click", playAgin);
 
 /*----- functions -----*/
 function rerollSelected(){
@@ -79,6 +81,7 @@ function init(){
     hasLockedIn = false;
     numOfTurns = 1;
     scoreCard = {};
+    replayButton.style.visibility = "hidden";
 }
 
 //updates dice and score card
@@ -325,6 +328,7 @@ function renderScore(){
         turnOutput.innerText = `GAME OVER`
         scoreOutput.style.color = "#0066D3";
         document.getElementById("playerInfo").setAttribute("class","gameOver");
+        replayButton.style.visibility = "";
     }
     else{
         turnOutput.innerText = `Turn ${numOfTurns}`
@@ -339,14 +343,26 @@ function showScore(numOfTurns){
     }
 }
 
+function playAgin(){
+    document.getElementById("turn").innerText ="Turn 1"
+    document.getElementById("score").style.color = "black";
+    document.getElementById("score").innerText = "Score: 0";
+    document.getElementById("playerInfo").removeAttribute("class");
+    let tempSpans = document.querySelectorAll("#scoreCard span");
+    tempSpans.forEach((noode)=>{noode.removeAttribute("class")});
+    let tempInputs = document.querySelectorAll("#scoreCard div inputs");
+    console.log(tempInputs);
+    tempInputs.forEach((noode)=>{noode.style.visibility = ""});
+    init();
+}
 
 function test(){
-    init();
     numOfTurns =14;
     render();
 }
 
 function gamePlayTest(){
+    init();
     rollAllDice();
 }
 
