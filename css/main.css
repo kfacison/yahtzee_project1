@@ -138,12 +138,17 @@ text-align: center;
     border-radius: 20px;
     background-color: #D0F5FF;
     border:2px solid #00585F;
+    margin: 5px 0;
 }
-
 #diceMat >span >button:active{
     background-color: #B3D4EC;
     border:2px solid #00585F;
 }
+#diceMat >span>div{
+    display: flex;
+    flex-direction: column;
+}
+
 
 #scoreCard{
     display: inline-flex;
@@ -169,6 +174,11 @@ text-align: center;
 #scoreCard>button:active{
     background-color: #B3D4EC;
     border:2px solid #567B97;
+}
+
+.gameOver{
+    border: 3px solid #0066D3;
+    border-radius: 20px;
 }
 
 .p{

@@ -45,6 +45,7 @@ function rerollSelected(){
 function lockInScore(evt){
     evt.preventDefault();
     const isSelcted = document.querySelector("input[name=points]:checked");
+    if(isSelcted === null){return;}
     if(!scoreCard[isSelcted.id]){
         scoreCard[isSelcted.id] = document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
         document.querySelector(`label[for="${isSelcted.id}"] span`).setAttribute("class", "picked");
@@ -323,6 +324,7 @@ function renderScore(){
     if(numOfTurns===14){
         turnOutput.innerText = `GAME OVER`
         scoreOutput.style.color = "#0066D3";
+        document.getElementById("playerInfo").setAttribute("class","gameOver");
     }
     else{
         turnOutput.innerText = `Turn ${numOfTurns}`
@@ -340,11 +342,7 @@ function showScore(numOfTurns){
 
 function test(){
     init();
-    dice1.value = 4;
-    dice2.value = 3;
-    dice3.value = 1;
-    dice4.value = 3;
-    dice5.value = 3;
+    numOfTurns =14;
     render();
 }
 

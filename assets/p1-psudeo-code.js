@@ -99,3 +99,7 @@ set span to class of picked
 //lock for all inputs
 //set checked to false
 
+//strech goals 
+//add button that checks all reroll boxes(player still needs to click reroll)
+//replay Button
+//out of reroll indicator
