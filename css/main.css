@@ -18,11 +18,11 @@ body{
     grid-template-rows: repeat(5,1fr);
     grid-template-columns: auto;
     grid-template-areas: 
-        "header header ."
-        "main main sidebar"
-        "main main sidebar"
-        "main main sidebar"
-        "main main .";
+        ". header header . "
+        ". main main sidebar"
+        ". main main sidebar"
+        ". main main sidebar"
+        ". main main .";
     
 } 
 
@@ -39,7 +39,6 @@ text-align: center;
     justify-content: end;
 }
 #diceMat >#dice1>p{
-    /* margin-bottom: 0; */
     border: 2px solid black;
     background-color: white;
     height: 50px;
@@ -85,7 +84,7 @@ text-align: center;
     background-color: darkgreen;
     border: 5px solid #003100;
     border-radius: 20px;
-    
+    max-width: 500px;
 }
 
 #diceMat >div>p{
@@ -110,9 +109,13 @@ text-align: center;
 #diceMat >span >button{
     margin: 10px 0;
     border-radius: 20px;
-    /* background-color: #DFF8D5;
-    border:1.5px solid #6D9062;
-    need clicked color change */
+    background-color: #D0F5FF;
+    border:2px solid #00585F;
+}
+
+#diceMat >span >button:active{
+    background-color: #B3D4EC;
+    border:2px solid #00585F;
 }
 
 #scoreCard{
@@ -133,8 +136,12 @@ text-align: center;
     align-self: center;
     border-radius: 20px;
     background-color: #D0F5FF;
-    border:2px solid #0066D3;
-    /* need clicked color change */
+    border:2px solid #567B97
+}
+
+#scoreCard>button:active{
+    background-color: #B3D4EC;
+    border:2px solid #567B97;
 }
 
 .p{

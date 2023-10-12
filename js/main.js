@@ -40,13 +40,11 @@ function rerollSelected(){
     for(let i=0;i<placerholer.length;i++){
         placerholer[i].checked =false;
     }
-    console.log(`You have ${numOfRerolls} rerolls left`);
 }
 
 function lockInScore(evt){
     evt.preventDefault();
     const isSelcted = document.querySelector("input[name=points]:checked");
-    //const isSelctedScore =document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
     if(!scoreCard[isSelcted.id]){
         scoreCard[isSelcted.id] = document.querySelector(`label[for="${isSelcted.id}"] span`).innerText;
         document.querySelector(`label[for="${isSelcted.id}"] span`).setAttribute("class", "picked");
@@ -59,7 +57,6 @@ function lockInScore(evt){
         for(let i=0;i<placerholer.length;i++){
             placerholer[i].checked =false;
         }
-        //showScore(numOfTurns);
     }
 
 }
@@ -266,7 +263,6 @@ function smallStraight(){
     if(possibleScore.className === "picked"){
         return;
     }
-    //temp boolean expression
     if(consecutiveNums(3)){
         possibleScore.innerText = 30;
         possibleScore.setAttribute("class","p");
@@ -282,7 +278,6 @@ function largeStraight(){
     if(possibleScore.className === "picked"){
         return;
     }
-    //temp boolean expression
     if(consecutiveNums(4)){
         possibleScore.innerText = 40;
         possibleScore.setAttribute("class","p");
