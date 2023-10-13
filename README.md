@@ -7,11 +7,9 @@ In this game, you click on the corresponding checkboxes for the dice you want to
 
 # GamePlay
 
-![StartPageScreenshot](https://github.com/kfacison/yahtzee_project1/assets/90002078/10b3b96d-1589-46ab-86fc-10fc337955e4)
-
-![FullScoreCardScreenshot](https://github.com/kfacison/yahtzee_project1/assets/90002078/f9dcd2d0-0e45-4b5c-838c-11d3a6640710)
-
-![GameOverScreenshot](https://github.com/kfacison/yahtzee_project1/assets/90002078/6fbb82a1-f47c-4143-b91e-3e1a9e96cb97)
+![StartPageScreenshotV2](https://github.com/kfacison/yahtzee_project1/assets/90002078/691a2e45-ff62-49eb-a1a6-ac93832c8221)
+![FullScoreCardScreenshotV2](https://github.com/kfacison/yahtzee_project1/assets/90002078/7f8efd81-762c-42e6-8ef5-dbcc2d712266)
+![GameOverScreenshotV2](https://github.com/kfacison/yahtzee_project1/assets/90002078/4a7d422f-7b96-46fa-9e1b-223bfcb6142f)
 
 
 ## Tech Being Used
@@ -25,16 +23,14 @@ Play Game -> [here](https://kfacison.github.io/yahtzee_project1/)
 # Stretch Goals
 
 ## Minor/Quality of gameplay improvements
-* Add button that checks all reroll boxes(player still needs to click reroll) ✔
-* Replay Button ✔
-* Out of reroll indicator(show number of rerolls left) ✔
+* Pop-up instructions
+* Responsive page design
 ## Major/New Features
 * 2 players option
 * Arrow points at active player
 * Dice go into cup animation/transition
 * Bonus way to score points
 * Select layout colors
-* Pop-up Instructions
 
 # Prep Material
 
