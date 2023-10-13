@@ -63,6 +63,6 @@ Play Game -> [here](https://kfacison.github.io/yahtzee_project1/)
 * Feature creep
 
 # Sources
-Rules/Decription: 
+Rules/Description: 
   * https://en.wikipedia.org/wiki/Yahtzee
   * https://cardgames.io/yahtzee/
