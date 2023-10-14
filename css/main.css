@@ -17,6 +17,8 @@
 }
 #diceMat{
     grid-area: main;
+    /* max-width: 650px;
+    justify-content: center; */
 }
 #scoreCard{
     grid-area: sidebar;
