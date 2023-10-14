@@ -23,8 +23,8 @@
 }
 #howToPlay{
     grid-area: info;
+    text-align: center;
 }
-
 body{
     background-color: #95E580;
     display: grid;
