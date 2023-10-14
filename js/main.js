@@ -378,7 +378,11 @@ function playAgin(){
 }
 
 function test(){
-    numOfTurns =14;
+    dice1.value =6;
+    dice2.value =6;
+    dice3.value =6;
+    dice4.value =6;
+    dice5.value =5;
     render();
 }
 
