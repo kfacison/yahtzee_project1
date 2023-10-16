@@ -160,6 +160,11 @@ function setScore(scoreInfo , tempScore){
     scoreInfo.setAttribute("class","p");
 }
 
+function removeClass(scoreInfo){
+    scoreInfo.innerText = 0;
+    scoreInfo.removeAttribute("class");
+}
+
 function diceHasNum(desiredNum){
     let tempScore =0;
     for(let i=0;i<5;i++){
@@ -170,8 +175,9 @@ function diceHasNum(desiredNum){
     let possibleScore = document.querySelector(`label[for="${desiredNum}s"] span`);
     if(possibleScore.className === "picked"){return;}
     if(tempScore===0){
-        possibleScore.innerText = 0;
-        possibleScore.removeAttribute("class");
+        //possibleScore.innerText = 0;
+        //possibleScore.removeAttribute("class");
+        removeClass(possibleScore);
     }
     else{
         //possibleScore.innerText = tempScore;
@@ -212,8 +218,9 @@ function threeSame(){
         setScore(possibleScore,tempScore);
     }
     else{
-        possibleScore.innerText = 0;
-        possibleScore.removeAttribute("class");
+        // possibleScore.innerText = 0;
+        // possibleScore.removeAttribute("class");
+        removeClass(possibleScore);
     }
 }
 
@@ -232,8 +239,9 @@ function fourSame(){
         setScore(possibleScore,tempScore);
     }
     else{
-        possibleScore.innerText = 0;
-        possibleScore.removeAttribute("class");
+        // possibleScore.innerText = 0;
+        // possibleScore.removeAttribute("class");
+        removeClass(possibleScore);
     }
 }
 
@@ -272,8 +280,9 @@ function fullHouse(){
         setScore(possibleScore,25);
     }
     else{
-        possibleScore.innerText = 0;
-        possibleScore.removeAttribute("class");
+        //possibleScore.innerText = 0;
+        //possibleScore.removeAttribute("class");
+        removeClass(possibleScore);
     }
 }
 
@@ -315,8 +324,9 @@ function smallStraight(){
         setScore(possibleScore,30);
     }
     else{
-        possibleScore.innerText = 0;
-        possibleScore.removeAttribute("class");
+        //possibleScore.innerText = 0;
+        //possibleScore.removeAttribute("class");
+        removeClass(possibleScore);
     }
 }
 
@@ -331,8 +341,9 @@ function largeStraight(){
         setScore(possibleScore,40);
     }
     else{
-        possibleScore.innerText = 0;
-        possibleScore.removeAttribute("class");
+        //possibleScore.innerText = 0;
+        //possibleScore.removeAttribute("class");
+        removeClass(possibleScore);
     }
 }
 
