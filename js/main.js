@@ -15,6 +15,7 @@ let numOfRerolls = 2;
 let hasLockedIn = false;
 let numOfTurns = 1;
 let scoreCard = {};
+let allSelected = false;
 
 /*----- cached elements  -----*/
 const rerollButton = document.getElementById("rerollButton");
@@ -42,9 +43,9 @@ function rerollSelected(){
     reroll(numsToReroll);
     numOfRerolls--;
     renderReroll();
-    const placerholer = document.querySelectorAll("input");
-    for(let i=0;i<placerholer.length;i++){
-        placerholer[i].checked =false;
+    const diceCheckbox = document.querySelectorAll("input");
+    for(let i=0;i<diceCheckbox.length;i++){
+        diceCheckbox[i].checked =false;
     }
 }
 
@@ -60,19 +61,29 @@ function lockInScore(evt){
         numOfTurns++;
         numOfRerolls =2;
         rollAllDice();
-        const placerholer = document.querySelectorAll("input");
-        for(let i=0;i<placerholer.length;i++){
-            placerholer[i].checked =false;
+        const diceCheckbox = document.querySelectorAll("input");
+        for(let i=0;i<diceCheckbox.length;i++){
+            diceCheckbox[i].checked =false;
         }
     }
 
 }
 
 function selectAll(){
-    const placerholer = document.querySelectorAll("input");
-        for(let i=0;i<placerholer.length;i++){
-            placerholer[i].checked =true;
+    const diceCheckbox = document.querySelectorAll("#diceMat input");
+    console.log(allSelected);
+    if(allSelected === false){
+        for(let i=0;i<diceCheckbox.length;i++){
+                diceCheckbox[i].checked =false;
         }
+        allSelected = true;
+    }
+    else if(allSelected === true){
+        for(let i=0;i<diceCheckbox.length;i++){
+                diceCheckbox[i].checked =true;
+        }
+        allSelected = false;
+    }
 }
 
 function rollAllDice(){
@@ -90,12 +101,13 @@ function reroll(diceToReroll){
 function init(){
     numOfRerolls = 2;
     hasLockedIn = false;
+    allSelected = false;
     numOfTurns = 1;
     scoreCard = {};
     replayButton.style.visibility = "hidden";
-    const placerholer = document.querySelectorAll("input");
-        for(let i=0;i<placerholer.length;i++){
-            placerholer[i].checked =false;
+    const diceCheckbox = document.querySelectorAll("input");
+        for(let i=0;i<diceCheckbox.length;i++){
+            diceCheckbox[i].checked =false;
         }
 }
 
@@ -114,6 +126,8 @@ function renderDice(){
         tempDice = document.querySelector(("span.value"+i));
         tempDice.innerText = cupOfDice[i-1].value;
     }
+    allSelected = false;
+    selectAll();
 }
 
 //render nums of reroll
