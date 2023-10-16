@@ -71,7 +71,6 @@ function lockInScore(evt){
 
 function selectAll(){
     const diceCheckbox = document.querySelectorAll("#diceMat input");
-    console.log(allSelected);
     if(allSelected === false){
         for(let i=0;i<diceCheckbox.length;i++){
                 diceCheckbox[i].checked =false;
@@ -156,6 +155,10 @@ function renderScoreCard(){
     yahtzeeSame();
 }
 
+function setScore(scoreInfo , tempScore){
+    scoreInfo.innerText = tempScore;
+    scoreInfo.setAttribute("class","p");
+}
 
 function diceHasNum(desiredNum){
     let tempScore =0;
@@ -171,8 +174,9 @@ function diceHasNum(desiredNum){
         possibleScore.removeAttribute("class");
     }
     else{
-        possibleScore.innerText = tempScore;
-        possibleScore.setAttribute("class","p");
+        //possibleScore.innerText = tempScore;
+        //possibleScore.setAttribute("class","p");
+        setScore(possibleScore,tempScore);
     }
 }
 
@@ -203,8 +207,9 @@ function threeSame(){
         for(let i=0;i<5;i++){
             tempScore += cupOfDice[i].value;
         }
-        possibleScore.innerText = tempScore;
-        possibleScore.setAttribute("class","p");
+        // possibleScore.innerText = tempScore;
+        // possibleScore.setAttribute("class","p");
+        setScore(possibleScore,tempScore);
     }
     else{
         possibleScore.innerText = 0;
@@ -222,8 +227,9 @@ function fourSame(){
         for(let i=0;i<5;i++){
             tempScore += cupOfDice[i].value;
         }
-        possibleScore.innerText = tempScore;
-        possibleScore.setAttribute("class","p");
+        // possibleScore.innerText = tempScore;
+        // possibleScore.setAttribute("class","p");
+        setScore(possibleScore,tempScore);
     }
     else{
         possibleScore.innerText = 0;
@@ -261,8 +267,9 @@ function fullHouse(){
         return;
     }
     if(countDuplicates()){
-        possibleScore.innerText = 25;
-        possibleScore.setAttribute("class","p");
+        // possibleScore.innerText = 25;
+        // possibleScore.setAttribute("class","p");
+        setScore(possibleScore,25);
     }
     else{
         possibleScore.innerText = 0;
@@ -303,8 +310,9 @@ function smallStraight(){
         return;
     }
     if(consecutiveNums(3)){
-        possibleScore.innerText = 30;
-        possibleScore.setAttribute("class","p");
+        // possibleScore.innerText = 30;
+        // possibleScore.setAttribute("class","p");
+        setScore(possibleScore,30);
     }
     else{
         possibleScore.innerText = 0;
@@ -318,8 +326,9 @@ function largeStraight(){
         return;
     }
     if(consecutiveNums(4)){
-        possibleScore.innerText = 40;
-        possibleScore.setAttribute("class","p");
+        // possibleScore.innerText = 40;
+        // possibleScore.setAttribute("class","p");
+        setScore(possibleScore,40);
     }
     else{
         possibleScore.innerText = 0;
@@ -337,8 +346,9 @@ function chanceSum(){
         return;
     }
     else{
-        possibleScore.innerText = tempScore;
-        possibleScore.setAttribute("class","p");
+        //possibleScore.innerText = tempScore;
+        //possibleScore.setAttribute("class","p");
+        setScore(possibleScore,tempScore);
     }
 }
 
@@ -349,8 +359,9 @@ function yahtzeeSame(){
         return;
     }
     else if(maxAppers(5)){
-        possibleScore.innerText = 60;
-        possibleScore.setAttribute("class","p");
+        //possibleScore.innerText = 60;
+        //possibleScore.setAttribute("class","p");
+        setScore(possibleScore,60);
     }
 }
 
